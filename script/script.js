@@ -101,30 +101,59 @@ const loadCatagory = () => {
    .then(data => displayCatagory(data.categories));
 }
    // display category
-const displayCatagory = (catagories) => {
+// const displayCatagory = (catagories) => {
    
-   // 1. get the container 
-    const catagoryContainer = document.getElementById("catagory-container")
-    catagoryContainer.innerHTML = "";
+//    // 1. get the container 
+//     const catagoryContainer = document.getElementById("catagory-container")
+//     catagoryContainer.innerHTML = "";
 
-   //  2.get every catagory
-   for(const catagory of catagories){
+//    //  2.get every catagory
+//    for(const catagory of catagories){
 
-      //  3. create element 
-      const btnLi =  document.createElement("div");
-      btnLi.innerHTML =   `
+//       //  3. create element 
+//       const btnLi =  document.createElement("div");
+//       btnLi.innerHTML =   `
 
       
 
-      <button class="btn w-full mt-2 hover:bg-[#15803D] text-white bg-[#a4beaf]" onclick="loadtrees(${catagory.id})"> ${catagory.category_name} </button>
+//       <button class="btn w-full mt-2 hover:bg-[#15803D] text-white bg-[#a4beaf]" onclick="loadtrees(${catagory.id})"> ${catagory.category_name} </button>
       
-      `;
+//       `;
 
        
 
-      catagoryContainer.append(btnLi);
-   }
+//       catagoryContainer.append(btnLi);
+//    }
+// }
+
+const displayCatagory = (catagories) => {
+    const catagoryContainer = document.getElementById("catagory-container")
+    catagoryContainer.innerHTML = "";
+
+    for(const catagory of catagories){
+        const btnLi = document.createElement("div");
+        btnLi.innerHTML = `
+            <button class="btn w-full mt-2 text-white bg-[#a4beaf] hover:bg-[#15803D]" onclick="activateCategory(this); loadtrees(${catagory.id})">
+                ${catagory.category_name}
+            </button>
+        `;
+        catagoryContainer.append(btnLi);
+    }
 }
+
+// New function to handle active button styling
+function activateCategory(button) {
+    const buttons = document.querySelectorAll("#catagory-container button");
+    buttons.forEach(btn => {
+        btn.classList.remove("bg-[#15803D]"); // remove active bg
+        btn.classList.add("bg-[#a4beaf]");    // restore normal bg
+    });
+
+    // set active style
+    button.classList.remove("bg-[#a4beaf]");
+    button.classList.add("bg-[#15803D]");
+}
+
 
 
 // for clicking catagories
