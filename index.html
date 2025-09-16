@@ -7,6 +7,9 @@
     <title>Green Earth</title>
      
 
+    <!-- font awesome -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
      <!-- font integration -->
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -78,6 +81,65 @@
             <img src="assets/hero-leaf2.png" alt="" class="w-32 lg:w-auto">
            </div>
        </div>
+
+       <!-- choose tree -->
+
+       <section class="bg-[#a4beaf]">
+
+        <h1 class="font-bold text-2xl text-center mt-4">Choose Your Trees</h1>
+        <!-- main div -->
+        <div class="flex flex-col lg:flex-row lg:justify-around  my-5 ">
+          
+            <!-- for catagories -->
+             <div  class="order-1">
+                <h1 class="font-bold text-2xl">Categories</h1>
+                <div id="catagory-container" class="list-none  text-2xl">
+
+                </div>
+             </div>
+
+             <!-- for cards -->
+              <div id="new-card">
+
+              </div>
+              <div id="cardContainer" class="grid grid-cols-1 lg:grid-cols-3 order-2 gap-5">
+                <!-- card 1-->
+
+                
+             
+             </div>
+
+             <!-- for check out -->
+              <div  class="order-3 h-auto w-auto lg:h-150 lg:w-80 bg-white">
+                <h1 class="font-bold text-2xl text-center">Your Cart</h1>
+                <div >
+                  <div id="cart-container">
+
+                  </div>
+
+                    <div>
+                       
+                    </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- modal -->
+             <!-- Open the modal using ID.showModal() method -->
+<!-- <button class="btn" onclick="my_modal_1.showModal()">open modal</button> -->
+<dialog id="my_modal_1" class="modal">
+  <div class="modal-box">
+    <div id="details-container">
+        
+    </div>
+    <div class="modal-action">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
 
 
        <!-- Campaign -->
@@ -182,5 +244,9 @@
             </aside>
           </footer>
     
+
+          <!-- script -->
+           <script src="./script/script.js"></script>
+           
 </body>
 </html>
