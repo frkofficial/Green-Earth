@@ -26,7 +26,7 @@ const displayCards = (cards) => {
    btnDiv.innerHTML = `
    
    <div>
-                 <div class="card bg-base-100  w-96 shadow-sm p-3">
+                 <div class="card bg-base-100  w-full lg:w-96 shadow-sm p-3">
                           <figure>
                            <img class="h-90 w-100  " src="${card.image}"
                             />
