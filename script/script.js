@@ -159,12 +159,19 @@ function activateCategory(button) {
 // for clicking catagories
 
 const loadtrees = (id) => {
+
+   const spinner = document.getElementById("spinner");
+    spinner.classList.remove("hidden"); // show spinner
    // console.log(id);
    const url = `https://openapi.programming-hero.com/api/category/${id}`
    // console.log(url);
    fetch(url)
    .then(res => res.json())
-   .then(data => displaytree(data.plants))
+   .then(data => 
+      {
+         displaytree(data.plants)
+         spinner.classList.add("hidden"); // hide spinner after loading
+      })
 
 
 }
